@@ -28,28 +28,31 @@
         <div class="game-contain panel panel-default">
 
             <div class="panel-body">
-                <h3>Enter a number between 1 and 100</h3>
+                <h3 class="panel-header">Enter a number between 1 and 100</h3>
 
                 <div class="form-group main-btn-contain">
-                    <input type="text" class="form-control" placeholder="1-100">
+                    <input type="text" id="guess" class="form-control" placeholder="1-100">
 
-                    <button type="submit" class="submit btn btn-primary">Guess!</button>
+                    <button type="submit" onclick="playersGuessSubmission()" class="submit btn btn-primary">Guess!</button>
+
+                    <p class="hidden" id="alert-box"></p>
                 </div>
                 
                 <div class="button-contain">
-                    <button type="button" class="btn btn-info">Play Again</button>
+                    <button type="button" class="btn btn-info" onclick="playAgain()">Play Again</button>
 
-                    <button type="button" class="btn btn-warning">Give me a hint</button>
+                    <button type="button" class="btn btn-warning" id="hint">Give me a hint</button>
                 </div>
 
-                <p class="bg-info">You have 3 guesses left</p>
+                <p class="bg-info" id="remaining"></p>
+
+                <h4>Previous Guesses</h4>
+                
+                <p class="previous"></p>
 
             </div>
             
         </div>
-
-        
-
     </div>
     
 
@@ -57,5 +60,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/guessingGame.js"></script>
+    
   </body>
 </html>
