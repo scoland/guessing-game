@@ -1,5 +1,6 @@
 /* **** Global Variables **** */
 // try to elminate these global variables in your project, these are here just to start.
+(function () {
 
 var playersGuess,
     winningNumber = generateWinningNumber(),
@@ -95,6 +96,7 @@ function playAgain(){
 	$('#remaining').show();
 	$('#alert-box').show();
 	$('.panel-header').text('Enter a number between 1 and 100!');
+	$('.previous').text('');
 }
 
 function winOrLose(result) {
@@ -113,14 +115,21 @@ function winOrLose(result) {
 	}
 }
 
-/* **** Event Listeners/Handlers ****  */
-
 updateGuesses();
 
 $('#hint').on('click', provideHint);
+
+$('.submit').on('click', playersGuessSubmission);
+
+$('.play-again').on('click', playAgain);
 
 $('#guess').keypress(function(event) {
 	if (event.which === 13) {
 		$('.submit').click();
 	}
 });
+
+})();
+
+/* **** Event Listeners/Handlers ****  */
+
